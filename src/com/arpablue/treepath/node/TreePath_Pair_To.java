@@ -32,6 +32,10 @@ class TreePath_Pair_To  extends TreePath_Pair_Logic
         {
             return ((TreePathNode) mValue).toJSONbeauty(margin);
         }
+        if( this.mValue instanceof TreePath )
+        {
+            return ((TreePath) mValue).toJSONbeauty(margin);
+        }
         return this.getValue().toString();
     }
     /**

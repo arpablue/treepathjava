@@ -5,6 +5,8 @@
  */
 package com.arpablue.treepath.node;
 
+import com.arpablue.treepath.TreePath;
+
 /**
  * It manage the method to interact witht he other clase.
  * @author ASUS
@@ -27,4 +29,13 @@ public class TreePath_Pair extends TreePath_Pair_To
         this.setKey(key);
         this.setValue(value);
     }
+    /**
+     * It specify the new value.
+     * @param value It i sthe new value.
+     */
+    public void setValue( Object value){
+        mValue = value;
+    }
+
+    
 }

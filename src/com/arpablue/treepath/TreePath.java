@@ -29,41 +29,22 @@ public class TreePath
         mRoot = new TreePathNode();
     }
     /**
-     * It set a format a string to be in a specific format.
-     * @param target It is the string to format.
-     * @return It is the string formated.
-     */
-    protected String setFormat( String target )
-    {
-        if( target == null )
-        {
-            return null;
-        }
-        target = target.trim();
-        target = target.replace('/', ' ');
-        target = target.trim();
-        target = target.replace(' ', '/');
-        return target;
-    }
-    /**
      * It add a element using a key path to epecify the structure where the value should be added.
      * If the key path not exists then it is added.
      * @param key It is the key path.
      * @param value It is the new value to the key path.
      */
-    public void add( String key, Object value )
+    public void set( String key, Object value )
     {
-        key = this.setFormat(key);
-        if( key == null ){
-            return;
-        }
-        if( key.length() < 1)
-        {
-            return;
-        }
-        String[] keys = key.split("/");
-        this.mRoot.add(keys, 0, value);
-        
+        this.mRoot.set(key, value);
+    }
+    /**
+     * It specify a node for the roo node.
+     * @param array Ity i sthe array to specify the current node.
+     */
+    public void add( Object[] array )
+    {
+        this.mRoot.addArray( array );
     }
     /**
      * It return the data of the current object in string with JSON format
@@ -82,10 +63,13 @@ public class TreePath
         }
         return this.mRoot.toJSONbeauty( margin );
     }
-    public String JSONbeauty(){
+    public String toJSONbeauty(){
         return this.toJSONbeauty("");
     }
- 
+    /**
+     * It return another object with the a clone of each element in the node and the same values.
+     * @return it it the clone of the current tree.
+     */
     public Object cloneMe() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

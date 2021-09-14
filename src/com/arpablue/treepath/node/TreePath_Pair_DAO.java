@@ -37,13 +37,6 @@ class TreePath_Pair_DAO  extends TreePath_Pair_Base
         return this.mKey;
     }
     /**
-     * It specify the new value.
-     * @param value It i sthe new value.
-     */
-    public void setValue( Object value){
-        mValue = value;
-    }
-    /**
      * It return the current value, it is the current value.
      * @return It is the current value.
      */

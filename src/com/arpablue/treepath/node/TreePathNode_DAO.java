@@ -53,6 +53,7 @@ class TreePathNode_DAO extends TreePathNode_Base
      * @param key It is  the key used fore the current level.
      * @param value IT is the new level added.
      */
+    
    protected void setNode( String key, Object value)
    {
        this.initThis();
@@ -85,23 +86,5 @@ class TreePathNode_DAO extends TreePathNode_Base
         }
         return null;
     }
-   
-   /**
-    * It set a vector in the current level.
-    * @param key It i sthe key for teh value
-    * @param value It is the array to be set.
-    */
-   protected  void setArray(String key, ArrayList value)
-   {
-       
-   }
-   /**
-    * It set a vector in the current level.
-    * @param key It i sthe key for teh value
-    * @param value It is the array to be set.
-    */
-   protected  void setArray(String key, Object[] value)
-   {
-       
-   }
+
 }
